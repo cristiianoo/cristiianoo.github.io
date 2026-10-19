@@ -1,255 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cristiano Saraiva — Software Engineering Student</title>
-    <meta name="description" content="Cristiano Saraiva is a Software Engineering student at ESTGA, University of Aveiro, building clean web and mobile applications.">
+    <title>Cristiano Saraiva</title>
+    <meta name="description" content="Software Engineering student at ESTGA, University of Aveiro.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="site-header">
+    <header>
         <div class="container header-inner">
-            <a href="#" class="brand" aria-label="Cristiano Saraiva Home">
-                Cristiano Saraiva
-            </a>
+            <a href="#" class="logo">cs.</a>
 
-            <nav id="nav-menu" class="site-nav" aria-label="Main Navigation">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <nav id="nav-menu" class="nav">
+                <a href="#about" class="nav-link">about</a>
+                <a href="#skills" class="nav-link">skills</a>
+                <a href="#projects" class="nav-link">projects</a>
+                <a href="#contact" class="nav-link">contact</a>
             </nav>
 
-            <div class="header-actions">
-                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
-                    <!-- Sun Icon (shown in dark mode to switch to light) -->
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <!-- Moon Icon (shown in light mode to switch to dark) -->
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
+            <div class="header-right">
+                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
-
-                <button id="mobile-toggle" class="icon-btn mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
-                    <!-- Hamburger icon when closed -->
-                    <svg class="menu-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                    <!-- Close icon (X) when open -->
-                    <svg class="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                <button id="mobile-toggle" class="icon-btn mobile-btn" type="button" aria-label="Menu" aria-expanded="false">
+                    <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+                    <svg class="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <section class="hero-section fade-in">
-            <div class="status-indicator">
-                <span class="status-dot"></span>
-                <span>Open to internships & collaborative projects</span>
-            </div>
-
-            <h1 class="hero-title">
-                Software Engineering student passionate about clean code, web development, and practical software design.
-            </h1>
-
-            <p class="hero-intro">
-                Undergraduate at <strong>ESTGA, University of Aveiro</strong>. Focused on modern full-stack web and mobile applications with an eye for usability and maintainability.
-            </p>
-
-            <div class="hero-links">
-                <a href="mailto:cristianosaraiva.dev@gmail.com" class="btn btn-primary">Get in touch</a>
-                <a href="#projects" class="btn btn-secondary">View work</a>
-                <div class="external-links">
-                    <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer" class="text-link">GitHub ↗</a>
-                    <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer" class="text-link">LinkedIn ↗</a>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <p class="mono sm fade-up">software engineering student</p>
+                <h1 class="fade-up">
+                    Cristiano Saraiva
+                </h1>
+                <p class="hero-desc fade-up">
+                    I'm studying Software Engineering at <strong>ESTGA, University of Aveiro</strong>
+                    and I like building things for the web. Currently looking for internship
+                    opportunities and cool projects to collaborate on.
+                </p>
+                <div class="hero-links fade-up">
+                    <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer">github</a>
+                    <span class="dot">·</span>
+                    <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer">linkedin</a>
+                    <span class="dot">·</span>
+                    <a href="mailto:cristianosaraiva.dev@gmail.com">email</a>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section fade-in">
-            <h2 class="section-title">About</h2>
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="fade-up">About</h2>
+                <div class="about-grid">
+                    <div class="about-text fade-up">
+                        <p>
+                            I got into programming because I liked understanding how things work.
+                            That curiosity turned into a degree in Software Engineering and a real
+                            interest in building applications that are well-structured and actually
+                            useful.
+                        </p>
+                        <p>
+                            Most of my work sits at the intersection of <strong>web development</strong>
+                            and <strong>mobile apps</strong>. I care about writing clean code, thinking
+                            about architecture, and learning something new with every project.
+                        </p>
+                    </div>
+                    <div class="about-meta fade-up">
+                        <div class="meta-row">
+                            <span class="mono sm">Education</span>
+                            <span>BSc Software Engineering</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="mono sm">University</span>
+                            <span>ESTGA · Univ. of Aveiro</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="mono sm">Focus</span>
+                            <span>Full-Stack · Mobile · OOP</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="mono sm">Location</span>
+                            <span>Portugal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <div class="about-content">
-                <div class="about-text">
+        <!-- Skills -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="fade-up">Skills</h2>
+                <div class="skills-grid fade-up">
+                    <div class="skill-group">
+                        <h3 class="mono sm">Languages</h3>
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>C / C++</span>
+                            <span>SQL</span>
+                            <span>HTML &amp; CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="mono sm">Frontend &amp; Mobile</h3>
+                        <div class="tags">
+                            <span>React</span>
+                            <span>Responsive Design</span>
+                            <span>Mobile Dev</span>
+                            <span>Modern CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="mono sm">Backend &amp; Data</h3>
+                        <div class="tags">
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>REST APIs</span>
+                            <span>PostgreSQL</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="mono sm">Tools</h3>
+                        <div class="tags">
+                            <span>Git</span>
+                            <span>Linux</span>
+                            <span>VS Code</span>
+                            <span>OOP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="fade-up">Projects</h2>
+
+                <div class="project fade-up">
+                    <div class="project-top">
+                        <h3>Talking Hands</h3>
+                        <span class="mono sm">PAP · Secondary School</span>
+                    </div>
                     <p>
-                        I am currently pursuing a degree in <strong>Software Engineering (Engenharia Informática)</strong> at ESTGA, University of Aveiro. My path in technology is driven by a genuine interest in understanding how systems work under the hood and crafting solutions that are both technically sound and simple to use.
+                        Final-year project focused on helping people learn Portuguese Sign Language
+                        (LGP) through an interactive digital experience. Explored accessible design
+                        patterns and educational interaction.
                     </p>
+                    <div class="tags sm-tags">
+                        <span>Accessibility</span>
+                        <span>Education</span>
+                        <span>LGP</span>
+                    </div>
+                </div>
+
+                <div class="project fade-up">
+                    <div class="project-top">
+                        <h3>University Coursework</h3>
+                        <span class="mono sm">Academic · ESTGA</span>
+                    </div>
                     <p>
-                        My main focus lies in <strong>full-stack development</strong> and <strong>mobile apps</strong>. I place high value on clean, maintainable architecture, structured problem-solving, and continuous learning alongside evolving tools.
+                        Various projects from my degree — OOP systems, database design, data
+                        structures, and collaborative development. Most live in private or
+                        group repos.
                     </p>
-                </div>
-
-                <div class="meta-list">
-                    <div class="meta-item">
-                        <span class="meta-label">Degree</span>
-                        <span class="meta-value">BSc in Software Engineering</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Institution</span>
-                        <span class="meta-value">ESTGA · University of Aveiro</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Focus Areas</span>
-                        <span class="meta-value">Full-Stack Web, Mobile, Object-Oriented Design</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Location</span>
-                        <span class="meta-value">Portugal</span>
+                    <div class="tags sm-tags">
+                        <span>OOP</span>
+                        <span>Data Structures</span>
+                        <span>SQL</span>
+                        <span>Architecture</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section fade-in">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <p class="section-subtitle">Languages, frameworks, and tooling I use for software development.</p>
-
-            <div class="skills-list">
-                <div class="skill-group">
-                    <h3 class="skill-group-name">Languages</h3>
-                    <div class="skill-pills">
-                        <span class="pill">JavaScript</span>
-                        <span class="pill">TypeScript</span>
-                        <span class="pill">Python</span>
-                        <span class="pill">Java</span>
-                        <span class="pill">C / C++</span>
-                        <span class="pill">SQL</span>
-                        <span class="pill">HTML5 & CSS3</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-name">Frontend & Mobile</h3>
-                    <div class="skill-pills">
-                        <span class="pill">React</span>
-                        <span class="pill">Mobile Development</span>
-                        <span class="pill">Responsive Layouts</span>
-                        <span class="pill">Modern CSS</span>
-                        <span class="pill">UI / UX Principles</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-name">Backend & Data</h3>
-                    <div class="skill-pills">
-                        <span class="pill">Node.js</span>
-                        <span class="pill">Express</span>
-                        <span class="pill">RESTful APIs</span>
-                        <span class="pill">PostgreSQL</span>
-                        <span class="pill">MySQL</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-name">Tools & Methods</h3>
-                    <div class="skill-pills">
-                        <span class="pill">Git & GitHub</span>
-                        <span class="pill">Linux</span>
-                        <span class="pill">VS Code</span>
-                        <span class="pill">Object-Oriented Programming</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section fade-in">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Selected academic work and personal software development.</p>
-
-            <div class="projects-list">
-                <article class="project-entry">
-                    <div class="project-header">
-                        <h3 class="project-name">Talking Hands</h3>
-                        <span class="project-status">PAP Project · Secondary Education</span>
-                    </div>
-                    <p class="project-description">
-                        Final secondary-school project (PAP) dedicated to facilitating the learning of Portuguese Sign Language (Língua Gestual Portuguesa — LGP). Explored accessible interface patterns and educational interaction.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Accessibility</span>
-                        <span class="tag">Education</span>
-                        <span class="tag">Portuguese Sign Language (LGP)</span>
-                    </div>
-                </article>
-
-                <article class="project-entry">
-                    <div class="project-header">
-                        <h3 class="project-name">University Coursework & Labs</h3>
-                        <span class="project-status">Academic Work · ESTGA</span>
-                    </div>
-                    <p class="project-description">
-                        Extensive hands-on programming projects and system design assignments completed as part of my Software Engineering degree. Focused on object-oriented programming, data structures, relational databases, and collaborative development.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Data Structures</span>
-                        <span class="tag">OOP</span>
-                        <span class="tag">SQL Databases</span>
-                        <span class="tag">Software Architecture</span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section fade-in">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-subtitle">
-                I am available for software engineering internships and open to technical discussions.
-            </p>
-
-            <div class="contact-card-minimal">
-                <div class="contact-email-row">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:cristianosaraiva.dev@gmail.com" class="contact-email-link">
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="fade-up">Get in touch</h2>
+                <p class="contact-text fade-up">
+                    I'm always open to hearing about internships, side projects, or just
+                    having a conversation about tech. Don't be a stranger.
+                </p>
+                <div class="contact-row fade-up">
+                    <a href="mailto:cristianosaraiva.dev@gmail.com" class="contact-link-main">
                         cristianosaraiva.dev@gmail.com
                     </a>
-                    <button id="copy-email-btn" class="btn btn-secondary btn-sm" type="button">
-                        Copy email
+                    <button id="copy-email-btn" class="copy-btn" type="button">
+                        <span class="copy-label">copy</span>
                     </button>
                 </div>
-
-                <div class="contact-links-row">
-                    <span class="contact-label">Socials</span>
-                    <div class="social-links-group">
-                        <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer" class="text-link">GitHub ↗</a>
-                        <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer" class="text-link">LinkedIn ↗</a>
-                    </div>
+                <div class="contact-socials fade-up">
+                    <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Site Footer -->
-    <footer class="site-footer">
+    <footer>
         <div class="container footer-inner">
-            <p>© 2026 Cristiano Saraiva</p>
-            <a href="#" class="back-to-top">Back to top ↑</a>
+            <span>© 2026 Cristiano Saraiva</span>
+            <a href="#">↑ top</a>
         </div>
     </footer>
 

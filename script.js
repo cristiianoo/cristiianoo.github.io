@@ -1,190 +1,89 @@
-// ==========================================================================
-// Cristiano Saraiva — Portfolio Interactive Features
-// Theme Switching, Mobile Nav, Copy-to-Clipboard & Scroll Animations
-// ==========================================================================
+(function () {
+  'use strict';
 
-document.documentElement.classList.add('js-enabled');
+  // ── Theme ──────────────────────────────────────────────────────
+  const btn = document.getElementById('theme-toggle');
 
-function initPortfolio() {
-  // --- Theme Management ---
-  const themeToggleBtn = document.getElementById('theme-toggle');
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    if (themeToggleBtn) {
-      const isDark = theme === 'dark';
-      const label = isDark ? 'Switch to light theme' : 'Switch to dark theme';
-      themeToggleBtn.setAttribute('aria-label', label);
-      themeToggleBtn.setAttribute('title', label);
-    }
+  function setTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    if (btn) btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
   }
 
-  let storedTheme = null;
-  try {
-    storedTheme = localStorage.getItem('theme');
-  } catch (error) {
-    // Storage may be disabled in private browsing
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (_) {}
+  setTheme(saved === 'light' ? 'light' : 'dark');
+
+  if (btn) btn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    try { localStorage.setItem('theme', next); } catch (_) {}
+  });
+
+  // ── Mobile nav ─────────────────────────────────────────────────
+  const menuBtn = document.getElementById('mobile-toggle');
+  const nav = document.getElementById('nav-menu');
+
+  function close() {
+    if (!nav || !menuBtn) return;
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
   }
 
-  // Default to 'dark' theme (unless user specifically chose 'light' before)
-  const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
-  applyTheme(initialTheme);
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
-      applyTheme(targetTheme);
-      try {
-        localStorage.setItem('theme', targetTheme);
-      } catch (error) {
-        // Continue even if storage fails
-      }
-    });
-  }
-
-  // --- Mobile Navigation Drawer ---
-  const mobileToggleBtn = document.getElementById('mobile-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  function openMobileMenu() {
-    if (!mobileToggleBtn || !navMenu) return;
-    navMenu.classList.add('open');
-    mobileToggleBtn.setAttribute('aria-expanded', 'true');
-  }
-
-  function closeMobileMenu() {
-    if (!mobileToggleBtn || !navMenu) return;
-    navMenu.classList.remove('open');
-    mobileToggleBtn.setAttribute('aria-expanded', 'false');
-  }
-
-  if (mobileToggleBtn && navMenu) {
-    mobileToggleBtn.addEventListener('click', (e) => {
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', e => {
       e.stopPropagation();
-      const isOpen = navMenu.classList.contains('open');
-      if (isOpen) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
     });
-
-    // Close menu when a navigation item is clicked
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
+    nav.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', close));
+    document.addEventListener('click', e => {
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !menuBtn.contains(e.target)) close();
     });
-
-    // Close when tapping outside the menu on mobile
-    document.addEventListener('click', (e) => {
-      if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !mobileToggleBtn.contains(e.target)) {
-        closeMobileMenu();
-      }
-    });
-
-    // Close when pressing the Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMobileMenu();
-    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   }
 
-  // --- Copy Email to Clipboard ---
-  const copyEmailBtn = document.getElementById('copy-email-btn');
-  const emailText = 'cristianosaraiva.dev@gmail.com';
-
-  if (copyEmailBtn) {
-    copyEmailBtn.addEventListener('click', async () => {
-      const originalText = copyEmailBtn.innerText;
-      let copied = false;
-
+  // ── Copy email ─────────────────────────────────────────────────
+  const copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    const label = copyBtn.querySelector('.copy-label');
+    copyBtn.addEventListener('click', async () => {
+      let ok = false;
+      const email = 'cristianosaraiva.dev@gmail.com';
       try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(emailText);
-          copied = true;
-        } else {
-          throw new Error('Clipboard API unavailable');
-        }
-      } catch (err) {
-        // Fallback for file:// or unsecure contexts
-        const textArea = document.createElement('textarea');
-        textArea.value = emailText;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-9999px';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-          copied = document.execCommand('copy');
-        } catch (e) {
-          copied = false;
-        }
-        document.body.removeChild(textArea);
+        if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(email); ok = true; }
+        else throw 0;
+      } catch (_) {
+        const t = document.createElement('textarea');
+        t.value = email; t.style.cssText = 'position:fixed;left:-9999px';
+        document.body.appendChild(t); t.select();
+        try { ok = document.execCommand('copy'); } catch (__) {}
+        document.body.removeChild(t);
       }
-
-      if (copied) {
-        copyEmailBtn.innerText = 'Copied to clipboard! ✓';
-        copyEmailBtn.classList.add('copied');
-      } else {
-        copyEmailBtn.innerText = 'cristianosaraiva.dev@gmail.com';
-      }
-
-      setTimeout(() => {
-        copyEmailBtn.innerText = originalText;
-        copyEmailBtn.classList.remove('copied');
-      }, 2000);
+      if (ok && label) { label.textContent = 'copied!'; copyBtn.classList.add('copied'); }
+      setTimeout(() => { if (label) label.textContent = 'copy'; copyBtn.classList.remove('copied'); }, 2000);
     });
   }
 
-  // --- Scroll Reveal Animations ---
-  const fadeElements = document.querySelectorAll('.fade-in');
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
+  // ── Scroll reveal ──────────────────────────────────────────────
+  const els = document.querySelectorAll('.fade-up');
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-
-    fadeElements.forEach(element => observer.observe(element));
+    els.forEach(el => io.observe(el));
   } else {
-    fadeElements.forEach(element => element.classList.add('visible'));
+    els.forEach(el => el.classList.add('visible'));
   }
 
-  // --- Active Section Link Tracking on Scroll ---
-  const sections = document.querySelectorAll('main section[id]');
-  function updateActiveLink() {
-    let activeSection = '';
-    const marker = window.scrollY + 120;
-
-    sections.forEach(section => {
-      if (marker >= section.offsetTop && marker < section.offsetTop + section.offsetHeight) {
-        activeSection = section.id;
-      }
-    });
-
-    navLinks.forEach(link => {
-      const isActive = link.getAttribute('href') === `#${activeSection}`;
-      link.classList.toggle('active', Boolean(activeSection) && isActive);
-      if (isActive && activeSection) {
-        link.setAttribute('aria-current', 'location');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
+  // ── Active nav ─────────────────────────────────────────────────
+  const sections = document.querySelectorAll('.section[id]');
+  const links = document.querySelectorAll('.nav-link');
+  function update() {
+    const y = scrollY + 100;
+    let id = '';
+    sections.forEach(s => { if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) id = s.id; });
+    links.forEach(l => l.classList.toggle('active', !!id && l.getAttribute('href') === '#' + id));
   }
-
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-  window.addEventListener('resize', updateActiveLink);
-  updateActiveLink();
-}
-
-// Ensure execution whether document is loading or already ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initPortfolio);
-} else {
-  initPortfolio();
-}
+  addEventListener('scroll', update, { passive: true });
+  update();
+})();
