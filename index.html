@@ -1,226 +1,309 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cristiano Saraiva</title>
-    <meta name="description" content="Software Engineering student at ESTGA, University of Aveiro.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Cristiano Saraiva, Engenharia Informática Aplicada</title>
+    <meta name="description" content="Estudante de Engenharia Informática Aplicada na ESTGA, à procura de estágio curricular em desenvolvimento de software. Java, Python, JavaScript, React e SQL. Projetos de web e mobile.">
+    <meta name="author" content="Cristiano Saraiva">
+    <meta property="og:title" content="Cristiano Saraiva, Engenharia Informática Aplicada">
+    <meta property="og:description" content="À procura de estágio curricular em desenvolvimento de software. Águeda, Portugal.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pt-PT" href="index.html">
+    <link rel="alternate" hreflang="en" href="en.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23c9a76c'%3Ecs.%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#111111">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Cristiano Saraiva", "url": "https://cristiianoo.github.io/", "email": "mailto:cristianosaraiva.dev@gmail.com", "jobTitle": "Estudante de Engenharia Informática Aplicada", "address": {"@type": "PostalAddress", "addressLocality": "Águeda", "addressCountry": "PT"}, "knowsAbout": ["Java", "Python", "JavaScript", "React", "SQL"], "sameAs": ["https://github.com/cristiianoo", "https://www.linkedin.com/in/cristiano-saraiva-231760260"]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
 
-    <header>
-        <div class="container header-inner">
-            <a href="#" class="logo">cs.</a>
+<header class="bar">
+    <div class="wrap bar-inner">
+        <a class="brand" href="#top" aria-label="Cristiano Saraiva, início">cs.</a>
+        <nav id="nav" class="nav" aria-label="Secções">
+            <a class="nav-link" href="#sobre">sobre</a>
+            <a class="nav-link" href="#projetos">projetos</a>
+            <a class="nav-link" href="#experiencia">experiência</a>
+            <a class="nav-link" href="#formacao">formação</a>
+            <a class="nav-link" href="#competencias">competências</a>
+            <a class="nav-link" href="#contacto">contacto</a>
+        </nav>
+        <a class="lang" href="en.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menu" data-open="Abrir menu" data-close="Fechar menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-menu" d="M4 7h16M4 12h16M4 17h16"/><path class="i-x" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+    </div>
+</header>
 
-            <nav id="nav-menu" class="nav">
-                <a href="#about" class="nav-link">about</a>
-                <a href="#skills" class="nav-link">skills</a>
-                <a href="#projects" class="nav-link">projects</a>
-                <a href="#contact" class="nav-link">contact</a>
-            </nav>
+<div class="wrap hero" id="top">
+    <div class="hero-text">
+        <p class="kicker">Estudante de Engenharia Informática Aplicada</p>
+        <h1>Cristiano Saraiva</h1>
+        <p class="summary">Experiência académica e prática em desenvolvimento de software com Java, Python, JavaScript, React e SQL. Projetos próprios de web e mobile e dois estágios na área de informática.</p>
+        <p class="actions">
+            <a class="btn" href="Cristiano_Saraiva_CV.pdf" target="_blank" rel="noopener">Abrir CV em PDF</a>
+            <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:cristianosaraiva.dev@gmail.com">Email</a>
+        </p>
+    </div>
+    <dl class="facts">
+        <div class="seeking"><dt>Procuro</dt><dd>Estágio curricular no 2.º semestre, em desenvolvimento de software</dd></div>
+        <div><dt>Formação</dt><dd>Engenharia Informática Aplicada, ESTGA</dd></div>
+        <div><dt>Foco</dt><dd>Web, mobile e programação orientada a objetos</dd></div>
+        <div><dt>Localização</dt><dd>Águeda, Portugal</dd></div>
+    </dl>
+</div>
 
-            <div class="header-right">
-                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">
-                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
-                <button id="mobile-toggle" class="icon-btn mobile-btn" type="button" aria-label="Menu" aria-expanded="false">
-                    <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-                    <svg class="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
+<main id="main">
+    <section id="sobre" class="section">
+        <div class="wrap">
+            <h2>Sobre</h2>
+            <div class="about">
+                <p>Comecei a programar porque gostava de perceber como as coisas funcionam. Essa curiosidade levou-me ao curso e a um interesse real em construir aplicações bem estruturadas e úteis.</p>
+                <p>A maior parte do meu trabalho está entre o desenvolvimento web e as aplicações móveis. Gosto de escrever código limpo, de pensar na arquitetura e de aprender algo novo em cada projeto.</p>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="container">
-                <p class="mono sm fade-up">software engineering student</p>
-                <h1 class="fade-up">
-                    Cristiano Saraiva
-                </h1>
-                <p class="hero-desc fade-up">
-                    I'm studying Software Engineering at <strong>ESTGA, University of Aveiro</strong>
-                    and I like building things for the web. Currently looking for internship
-                    opportunities and cool projects to collaborate on.
-                </p>
-                <div class="hero-links fade-up">
-                    <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer">github</a>
-                    <span class="dot">·</span>
-                    <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer">linkedin</a>
-                    <span class="dot">·</span>
-                    <a href="mailto:cristianosaraiva.dev@gmail.com">email</a>
-                </div>
-            </div>
-        </section>
+    <section id="projetos" class="section">
+        <div class="wrap">
+            <h2>Projetos</h2>
 
-        <!-- About -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="fade-up">About</h2>
-                <div class="about-grid">
-                    <div class="about-text fade-up">
-                        <p>
-                            I got into programming because I liked understanding how things work.
-                            That curiosity turned into a degree in Software Engineering and a real
-                            interest in building applications that are well-structured and actually
-                            useful.
-                        </p>
-                        <p>
-                            Most of my work sits at the intersection of <strong>web development</strong>
-                            and <strong>mobile apps</strong>. I care about writing clean code, thinking
-                            about architecture, and learning something new with every project.
-                        </p>
-                    </div>
-                    <div class="about-meta fade-up">
-                        <div class="meta-row">
-                            <span class="mono sm">Education</span>
-                            <span>BSc Software Engineering</span>
-                        </div>
-                        <div class="meta-row">
-                            <span class="mono sm">University</span>
-                            <span>ESTGA · Univ. of Aveiro</span>
-                        </div>
-                        <div class="meta-row">
-                            <span class="mono sm">Focus</span>
-                            <span>Full-Stack · Mobile · OOP</span>
-                        </div>
-                        <div class="meta-row">
-                            <span class="mono sm">Location</span>
-                            <span>Portugal</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="fade-up">Skills</h2>
-                <div class="skills-grid fade-up">
-                    <div class="skill-group">
-                        <h3 class="mono sm">Languages</h3>
-                        <div class="tags">
-                            <span>JavaScript</span>
-                            <span>TypeScript</span>
-                            <span>Python</span>
-                            <span>Java</span>
-                            <span>C / C++</span>
-                            <span>SQL</span>
-                            <span>HTML &amp; CSS</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3 class="mono sm">Frontend &amp; Mobile</h3>
-                        <div class="tags">
-                            <span>React</span>
-                            <span>Responsive Design</span>
-                            <span>Mobile Dev</span>
-                            <span>Modern CSS</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3 class="mono sm">Backend &amp; Data</h3>
-                        <div class="tags">
-                            <span>Node.js</span>
-                            <span>Express</span>
-                            <span>REST APIs</span>
-                            <span>PostgreSQL</span>
-                            <span>MySQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3 class="mono sm">Tools</h3>
-                        <div class="tags">
-                            <span>Git</span>
-                            <span>Linux</span>
-                            <span>VS Code</span>
-                            <span>OOP</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="fade-up">Projects</h2>
-
-                <div class="project fade-up">
-                    <div class="project-top">
+            <article class="proj">
+                <div class="proj-text">
+                    <div class="proj-top">
                         <h3>Talking Hands</h3>
-                        <span class="mono sm">PAP · Secondary School</span>
+                        <p class="ctx">Projeto final de curso (PAP)</p>
                     </div>
-                    <p>
-                        Final-year project focused on helping people learn Portuguese Sign Language
-                        (LGP) through an interactive digital experience. Explored accessible design
-                        patterns and educational interaction.
-                    </p>
-                    <div class="tags sm-tags">
-                        <span>Accessibility</span>
-                        <span>Education</span>
-                        <span>LGP</span>
-                    </div>
+                    <p>Aplicação móvel para aprender Língua Gestual Portuguesa (LGP). Tem um gestuário pesquisável com letras, números e palavras, filtros por categoria e um vídeo de cada gesto, e níveis de aprendizagem com quizzes sobre vídeos.</p>
+                    <p>Inclui palavras diárias, tema claro/escuro e progresso guardado no dispositivo, sem login.</p>
+                    <ul class="tags" aria-label="Tecnologias"><li>FlutterFlow</li><li>Firebase</li><li>Firestore</li></ul>
                 </div>
+                <figure class="diagram">
+                    <svg viewBox="0 0 480 232" role="img" aria-labelledby="th-t th-d">
+                        <title id="th-t">Estrutura do Talking Hands</title>
+                        <desc id="th-d">A aplicação móvel, com interface em FlutterFlow, tem gestuário, níveis, palavra do dia e tema. Os conteúdos vêm do Firebase/Firestore e o progresso fica guardado no dispositivo, sem login.</desc>
+                        <path class="d-line" d="M300 66H350M300 172H350"/>
+                        <rect class="d-group" x="0" y="0" width="300" height="232" rx="8"/>
+                        <text class="d-t" x="16" y="28">Aplicação móvel</text>
+                        <text class="d-s" x="16" y="45">Interface em FlutterFlow</text>
 
-                <div class="project fade-up">
-                    <div class="project-top">
-                        <h3>University Coursework</h3>
-                        <span class="mono sm">Academic · ESTGA</span>
-                    </div>
-                    <p>
-                        Various projects from my degree — OOP systems, database design, data
-                        structures, and collaborative development. Most live in private or
-                        group repos.
-                    </p>
-                    <div class="tags sm-tags">
-                        <span>OOP</span>
-                        <span>Data Structures</span>
-                        <span>SQL</span>
-                        <span>Architecture</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <rect class="d-box" x="16" y="60" width="126" height="68" rx="6"/>
+                        <text class="d-t" x="28" y="84">Gestuário</text>
+                        <text class="d-s" x="28" y="102">pesquisa e filtros</text>
+                        <text class="d-s" x="28" y="116">vídeo de cada gesto</text>
 
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="fade-up">Get in touch</h2>
-                <p class="contact-text fade-up">
-                    I'm always open to hearing about internships, side projects, or just
-                    having a conversation about tech. Don't be a stranger.
-                </p>
-                <div class="contact-row fade-up">
-                    <a href="mailto:cristianosaraiva.dev@gmail.com" class="contact-link-main">
-                        cristianosaraiva.dev@gmail.com
-                    </a>
-                    <button id="copy-email-btn" class="copy-btn" type="button">
-                        <span class="copy-label">copy</span>
-                    </button>
-                </div>
-                <div class="contact-socials fade-up">
-                    <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                </div>
-            </div>
-        </section>
-    </main>
+                        <rect class="d-box" x="158" y="60" width="126" height="68" rx="6"/>
+                        <text class="d-t" x="170" y="84">Níveis</text>
+                        <text class="d-s" x="170" y="102">quizzes sobre</text>
+                        <text class="d-s" x="170" y="116">vídeos</text>
 
-    <footer>
-        <div class="container footer-inner">
-            <span>© 2026 Cristiano Saraiva</span>
-            <a href="#">↑ top</a>
+                        <rect class="d-box" x="16" y="144" width="126" height="68" rx="6"/>
+                        <text class="d-t" x="28" y="168">Palavra do dia</text>
+                        <text class="d-s" x="28" y="186">palavras diárias</text>
+
+                        <rect class="d-box" x="158" y="144" width="126" height="68" rx="6"/>
+                        <text class="d-t" x="170" y="168">Tema</text>
+                        <text class="d-s" x="170" y="186">claro e escuro</text>
+
+                        <rect class="d-box" x="350" y="26" width="130" height="80" rx="6"/>
+                        <text class="d-t" x="364" y="54">Firebase</text>
+                        <text class="d-s" x="364" y="72">Firestore:</text>
+                        <text class="d-s" x="364" y="86">conteúdos</text>
+
+                        <rect class="d-box" x="350" y="132" width="130" height="80" rx="6"/>
+                        <text class="d-t" x="364" y="160">Dispositivo</text>
+                        <text class="d-s" x="364" y="178">progresso guardado,</text>
+                        <text class="d-s" x="364" y="192">sem login</text>
+                    </svg>
+                </figure>
+            </article>
+
+            <article class="proj">
+                <div class="proj-text">
+                    <div class="proj-top">
+                        <h3>MNGR</h3>
+                        <p class="ctx">Aplicações Web, ESTGA, em grupo de cinco</p>
+                    </div>
+                    <p>Plataforma web de gestão de clubes desportivos, com quatro perfis (atleta, treinador, gestor e administrador). Cobre equipas e escalões multidesporto, calendário, presenças, estatísticas, chat interno, notificações e relatórios em PDF.</p>
+                    <p class="label">A minha parte</p>
+                    <ul class="list">
+                        <li>Módulo de mensagens, com conversas diretas e de grupo em tempo real e indicador de não lidas.</li>
+                        <li>Páginas do atleta e landing page.</li>
+                        <li>Classes base do modelo: desporto, escalão, evento, presença, feedback, notificação, estatísticas de jogo e relatórios.</li>
+                    </ul>
+                    <ul class="tags" aria-label="Tecnologias"><li>Node.js</li><li>Express</li><li>SQL</li></ul>
+                </div>
+                <figure class="diagram">
+                    <svg viewBox="0 0 480 345" role="img" aria-labelledby="mn-t mn-d">
+                        <title id="mn-t">Estrutura do MNGR</title>
+                        <desc id="mn-d">Quatro perfis (atleta, treinador, gestor e administrador) usam a plataforma web, que reúne sete módulos: equipas e escalões, calendário, presenças, estatísticas, chat interno, notificações e relatórios em PDF. As páginas do atleta e o chat foram desenvolvidos por mim.</desc>
+
+                        <g class="d-line">
+                            <path d="M130 49C155 49 155 155 180 155"/>
+                            <path d="M130 101C155 101 155 155 180 155"/>
+                            <path d="M130 153C155 153 155 155 180 155"/>
+                            <path d="M130 205C155 205 155 155 180 155"/>
+                            <path d="M300 155C325 155 325 47 350 47"/>
+                            <path d="M300 155C325 155 325 93 350 93"/>
+                            <path d="M300 155C325 155 325 139 350 139"/>
+                            <path d="M300 155C325 155 325 185 350 185"/>
+                            <path d="M300 155C325 155 325 231 350 231"/>
+                            <path d="M300 155C325 155 325 277 350 277"/>
+                            <path d="M300 155C325 155 325 323 350 323"/>
+                        </g>
+
+                        <text class="d-s" x="0" y="16">Perfis</text>
+                        <text class="d-s" x="180" y="16">Plataforma</text>
+                        <text class="d-s" x="350" y="16">Módulos</text>
+
+                        <rect class="d-box d-hl" x="0" y="30" width="130" height="38" rx="6"/>
+                        <text class="d-t d-on" x="65" y="53" text-anchor="middle">Atleta</text>
+                        <rect class="d-box" x="0" y="82" width="130" height="38" rx="6"/>
+                        <text class="d-t" x="65" y="105" text-anchor="middle">Treinador</text>
+                        <rect class="d-box" x="0" y="134" width="130" height="38" rx="6"/>
+                        <text class="d-t" x="65" y="157" text-anchor="middle">Gestor</text>
+                        <rect class="d-box" x="0" y="186" width="130" height="38" rx="6"/>
+                        <text class="d-t" x="65" y="209" text-anchor="middle">Administrador</text>
+
+                        <rect class="d-group" x="180" y="100" width="120" height="110" rx="8"/>
+                        <text class="d-t" x="240" y="146" text-anchor="middle">Plataforma web</text>
+                        <text class="d-s" x="240" y="164" text-anchor="middle">Node.js, Express</text>
+                        <text class="d-s" x="240" y="178" text-anchor="middle">SQL</text>
+
+                        <rect class="d-box" x="350" y="30" width="130" height="34" rx="6"/>
+                        <text class="d-t" x="415" y="52" text-anchor="middle">Equipas e escalões</text>
+                        <rect class="d-box" x="350" y="76" width="130" height="34" rx="6"/>
+                        <text class="d-t" x="415" y="98" text-anchor="middle">Calendário</text>
+                        <rect class="d-box" x="350" y="122" width="130" height="34" rx="6"/>
+                        <text class="d-t" x="415" y="144" text-anchor="middle">Presenças</text>
+                        <rect class="d-box" x="350" y="168" width="130" height="34" rx="6"/>
+                        <text class="d-t" x="415" y="190" text-anchor="middle">Estatísticas</text>
+                        <rect class="d-box d-hl" x="350" y="214" width="130" height="34" rx="6"/>
+                        <text class="d-t d-on" x="415" y="236" text-anchor="middle">Chat interno</text>
+                        <rect class="d-box" x="350" y="260" width="130" height="34" rx="6"/>
+                        <text class="d-t" x="415" y="282" text-anchor="middle">Notificações</text>
+                        <rect class="d-box" x="350" y="306" width="130" height="34" rx="6"/>
+                        <text class="d-t" x="415" y="328" text-anchor="middle">Relatórios em PDF</text>
+
+                        <rect class="d-box d-hl" x="0" y="296" width="14" height="14" rx="3"/>
+                        <text class="d-s" x="22" y="307">Parte que desenvolvi</text>
+                    </svg>
+                </figure>
+            </article>
         </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="experiencia" class="section">
+        <div class="wrap">
+            <h2>Experiência</h2>
+            <div class="timeline">
+                <div class="entry">
+                    <p class="date">07/2025 – 07/2026</p>
+                    <div>
+                        <h3>Operador Frente de Loja</h3>
+                        <p class="meta">Pingo Doce, Águeda</p>
+                        <ul class="list"><li>Atendimento a clientes e operações de caixa, em equipa, em períodos de elevada afluência.</li></ul>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <p class="date">05/2024 – 07/2024</p>
+                    <div>
+                        <h3>Estagiário de Informática (FCT)</h3>
+                        <p class="meta">ScorpionSphere, Lda., Águeda</p>
+                        <ul class="list">
+                            <li>Aplicação móvel de contagem de passos em Flutter (Dart), com o plugin pedometer e uma página de login, a partir de requisitos do tutor.</li>
+                            <li>Testes, correção de erros e exportação do APK. Trabalho maioritariamente remoto, com reuniões regulares de acompanhamento.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <p class="date">05/2023 – 07/2023</p>
+                    <div>
+                        <h3>Estagiário de Informática (FCT)</h3>
+                        <p class="meta">ScorpionSphere, Lda., Águeda</p>
+                        <ul class="list">
+                            <li>Scripts em Python para automatizar a análise de logs de backup e de servidor, processando CSV e XML e classificando IPs e portas.</li>
+                            <li>Expressões regulares para analisar pedidos HTTP e códigos de resposta por IP, com geração automática de relatórios.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="formacao" class="section">
+        <div class="wrap">
+            <h2>Formação</h2>
+            <div class="timeline">
+                <div class="entry now">
+                    <p class="date">2024 – presente</p>
+                    <div>
+                        <h3>Licenciatura em Engenharia Informática Aplicada</h3>
+                        <p class="meta">Escola Superior de Tecnologia e Gestão de Águeda (ESTGA)</p>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <p class="date">2021 – 2024</p>
+                    <div>
+                        <h3>Curso Profissional Técnico de Informática - Sistemas</h3>
+                        <p class="meta">Escola Secundária Marques Castilho, Águeda</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competencias" class="section">
+        <div class="wrap">
+            <h2>Competências</h2>
+            <div class="skills">
+                <div class="skill"><ul class="tags"><li>Python</li></ul><p>Scripts de análise de logs de backup e de servidor (estágio, 2023)</p></div>
+                <div class="skill"><ul class="tags"><li>Flutter</li><li>Dart</li></ul><p>Aplicação de contagem de passos (estágio, 2024)</p></div>
+                <div class="skill"><ul class="tags"><li>FlutterFlow</li><li>Firebase</li></ul><p>Talking Hands</p></div>
+                <div class="skill"><ul class="tags"><li>Node.js</li><li>Express</li><li>SQL</li></ul><p>MNGR</p></div>
+                <div class="skill"><ul class="tags"><li>Java</li><li>JavaScript</li><li>React</li></ul><p>Formação na ESTGA e projetos próprios</p></div>
+            </div>
+            <p class="label">Também</p>
+            <ul class="tags tags-quiet"><li>TypeScript</li><li>C/C++</li><li>HTML/CSS</li><li>APIs REST</li><li>PostgreSQL</li><li>MySQL</li><li>Git</li><li>Linux</li><li>Windows</li></ul>
+            <p class="also">Troubleshooting e montagem e manutenção de hardware. Idiomas: português (nativo) e inglês.</p>
+        </div>
+    </section>
+</main>
+
+<footer id="contacto" class="section contact">
+    <div class="wrap">
+        <h2>Contacto</h2>
+        <div class="contact-grid">
+            <p class="lead">Disponível para estágio curricular no 2.º semestre.</p>
+            <div class="contact-links">
+                <div class="email-row">
+                    <a class="email" href="mailto:cristianosaraiva.dev@gmail.com">cristianosaraiva.dev@gmail.com</a>
+                    <button class="copy" id="copy" type="button" aria-label="Copiar endereço de email" data-copy="copiar" data-copied="copiado" data-error="não foi possível copiar"><span class="copy-label">copiar</span></button>
+                </div>
+                <p class="socials">
+                    <a href="https://www.linkedin.com/in/cristiano-saraiva-231760260" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/cristiianoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="Cristiano_Saraiva_CV.pdf" target="_blank" rel="noopener">CV em PDF</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-row">
+            <p>© 2026 Cristiano Saraiva</p>
+            <a href="#top">Voltar ao topo</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
