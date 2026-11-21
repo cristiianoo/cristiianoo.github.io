@@ -1,5 +1,5 @@
 // Cristiano Saraiva – portfolio
-// Copiar email, secção ativa na navegação, progresso e diagramas
+// Menu no telemóvel, copiar email, secção ativa na navegação e diagramas
 
 (function () {
   'use strict';
@@ -77,20 +77,6 @@
   window.addEventListener('scroll', updateActive, { passive: true });
   window.addEventListener('resize', updateActive);
   updateActive();
-  // ── Barra de progresso de leitura ──────────────────────
-  const bar = document.querySelector('.bar');
-
-  function updateProgress() {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.setProperty('--p', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
-  }
-
-  if (bar) {
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress);
-    updateProgress();
-  }
-
   // ── Diagramas ──────────────────────────────────────────
   const motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
